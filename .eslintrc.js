@@ -18,5 +18,9 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['prettier', 'react'],
-  rules: { 'react/react-in-jsx-scope': 'off', 'react/jsx-filename-extension': [0] },
+  ignorePatterns: ['node_modules', 'build', 'dist', 'public'],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [0],
+  },
 };
