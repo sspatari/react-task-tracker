@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-function Button({ color, text }) {
-  const onClick = () => {
-    console.log('click');
-  };
+function Button({ color, text, onClick }) {
   return (
     <button
       onClick={onClick}
@@ -19,6 +16,7 @@ function Button({ color, text }) {
 Button.propTypes = {
   color: PropTypes.string,
   text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
