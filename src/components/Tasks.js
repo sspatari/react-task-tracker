@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
+import Task from './Task';
 
-function Tasks({ tasks }) {
+function Tasks({ tasks, onDelete, onToggle }) {
   return (
     <>
       {tasks.map((task) => (
-        <h3 key={task.id}>{task.text}</h3>
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onToggle={onToggle}
+        />
       ))}
     </>
   );
@@ -19,6 +25,8 @@ Tasks.propTypes = {
       reminder: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 export default Tasks;
